@@ -1,0 +1,33 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.kickoffstudio.kickoff",
+        "paths": [
+          "/kickoff/r",
+          "/kickoff/r/*",
+          "/kickoff/m",
+          "/kickoff/m/*",
+          "/kickoff/p",
+          "/kickoff/p/*",
+          "NOT /kickoff/privacy",
+          "NOT /kickoff/terms",
+          "NOT /kickoff/index.html",
+          "NOT /kickoff/404.html"
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": ["TEAMID.com.kickoffstudio.kickoff"],
+    "details": [
+      {
+        "appID": "TEAMID.com.kickoffstudio.kickoff"
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": []
+  }
+}

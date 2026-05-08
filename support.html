@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kickoff — Support</title>
+  <meta name="description" content="Kickoff customer support. Live scores, watch parties, prediction plaza. iOS / iPadOS / Apple Watch.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+  <style>
+    :root {
+      --primary: #0F7A3A;
+      --accent: #FFD60A;
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #0A0E0F;
+      --text-secondary: #6B7280;
+      --divider: #E5E7EB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #10B968;
+        --accent: #FFD60A;
+        --bg: #0A0E0F;
+        --surface: #1A1E1F;
+        --text: #FAFAF7;
+        --text-secondary: #9CA3AF;
+        --divider: #2D3236;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      background: rgba(250, 250, 247, 0.8);
+      border-bottom: 1px solid var(--divider);
+      padding: 14px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      nav { background: rgba(10, 14, 15, 0.8); }
+    }
+    nav .logo {
+      font-weight: 800; font-size: 20px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    nav .lang { display: flex; gap: 4px; font-size: 13px; flex-wrap: wrap; }
+    nav .lang button {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all .15s ease;
+    }
+    nav .lang button:hover { color: var(--text); background: var(--divider); }
+    nav .lang button.active {
+      color: white;
+      background: var(--primary);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 17px;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    p { color: var(--text); margin-bottom: 12px; }
+    a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 16px;
+    }
+    .contact-card .email-line {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 12px;
+    }
+    footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 13px;
+      padding: 40px 20px;
+      border-top: 1px solid var(--divider);
+    }
+    footer a { color: var(--text-secondary); margin: 0 8px; }
+    .links-row { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./" class="logo">⚽ Kickoff</a>
+  <div class="lang" role="tablist" aria-label="Language">
+    <button data-lang="en"      class="active">English</button>
+    <button data-lang="zh-Hans">简体中文</button>
+    <button data-lang="zh-Hant">繁體中文</button>
+    <button data-lang="ja">日本語</button>
+    <button data-lang="es">Español</button>
+  </div>
+</nav>
+
+<main>
+  <h1 data-i18n="title">Kickoff Support</h1>
+  <p class="subtitle" data-i18n="subtitle">We reply within 48 hours. Usually much sooner.</p>
+
+  <h2 data-i18n="contactH">Contact Us</h2>
+  <div class="contact-card">
+    <p data-i18n="contactDesc">For any questions, bug reports, refund requests, or feature suggestions, please email us:</p>
+    <p class="email-line">📧 <a href="mailto:flashbody@foxmail.com">flashbody@foxmail.com</a></p>
+    <p style="color:var(--text-secondary); font-size:14px; margin-top:8px;" data-i18n="contactNote">Please include your iOS version, app version, and a brief description.</p>
+  </div>
+
+  <h2 data-i18n="faqH">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3 data-i18n="q1">Why is the Live Activity not showing on my Lock Screen?</h3>
+    <p data-i18n="a1">Open <strong>Settings → Notifications → Kickoff</strong> and enable <strong>Live Activities</strong>. Requires iOS 16.1 or later. On iPhone 14 Pro and later, the score will also appear in Dynamic Island.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q2">My friend's room invite link doesn't open</h3>
+    <p data-i18n="a2">Both of you must be signed into iCloud (in the same region recommended) and on iOS 16.0+. If the link still fails, ask your friend to re-create the room — invite codes expire after 24 hours.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q3">How do I restore my Pro purchase on a new device?</h3>
+    <p data-i18n="a3">Open Kickoff → <strong>Settings → Restore Purchases</strong>. Make sure you are signed in with the same Apple ID used for the original purchase.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q4">Does Kickoff involve real-money betting or gambling?</h3>
+    <p data-i18n="a4"><strong>No.</strong> The Prediction Plaza is for entertainment only. There are no prizes, no real money, and no gambling of any kind. It is purely a social leaderboard.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q5">Which leagues are supported?</h3>
+    <p data-i18n="a5">1,100+ leagues worldwide — Premier League, La Liga, Bundesliga, Serie A, Ligue 1, UEFA Champions League, FIFA World Cup, Chinese Super League, J.League, K League, MLS, and many more.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q6">How do I cancel a subscription?</h3>
+    <p data-i18n="a6">Kickoff Pro is a one-time purchase, not a subscription. There is nothing to cancel. If you purchased it by accident, please email us within 48 hours and we will help you get a refund through Apple.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3 data-i18n="q7">Is my data private?</h3>
+    <p data-i18n="a7">Yes. All room data is stored in your personal iCloud account via Apple CloudKit. We have no servers and we cannot read your data. There are no ads and no third-party tracking.</p>
+  </div>
+
+  <h2 data-i18n="legalH">Legal</h2>
+  <div class="links-row">
+    <a href="./privacy.html" data-i18n="privacyLink">Privacy Policy</a> ·
+    <a href="./terms.html" data-i18n="termsLink">Terms of Service</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 KickoffStudio. All Rights Reserved.</p>
+  <p style="margin-top:6px; font-size:12px;" data-i18n="legalFooter">Prediction Plaza is for entertainment only. No real money. No prizes. No gambling.</p>
+</footer>
+
+<script>
+  const I18N = {
+    "en": {
+      title: "Kickoff Support",
+      subtitle: "We reply within 48 hours. Usually much sooner.",
+      contactH: "Contact Us",
+      contactDesc: "For any questions, bug reports, refund requests, or feature suggestions, please email us:",
+      contactNote: "Please include your iOS version, app version, and a brief description.",
+      faqH: "Frequently Asked Questions",
+      q1: "Why is the Live Activity not showing on my Lock Screen?",
+      a1: "Open <strong>Settings → Notifications → Kickoff</strong> and enable <strong>Live Activities</strong>. Requires iOS 16.1 or later. On iPhone 14 Pro and later, the score will also appear in Dynamic Island.",
+      q2: "My friend's room invite link doesn't open",
+      a2: "Both of you must be signed into iCloud (in the same region recommended) and on iOS 16.0+. If the link still fails, ask your friend to re-create the room — invite codes expire after 24 hours.",
+      q3: "How do I restore my Pro purchase on a new device?",
+      a3: "Open Kickoff → <strong>Settings → Restore Purchases</strong>. Make sure you are signed in with the same Apple ID used for the original purchase.",
+      q4: "Does Kickoff involve real-money betting or gambling?",
+      a4: "<strong>No.</strong> The Prediction Plaza is for entertainment only. There are no prizes, no real money, and no gambling of any kind. It is purely a social leaderboard.",
+      q5: "Which leagues are supported?",
+      a5: "1,100+ leagues worldwide — Premier League, La Liga, Bundesliga, Serie A, Ligue 1, UEFA Champions League, FIFA World Cup, Chinese Super League, J.League, K League, MLS, and many more.",
+      q6: "How do I cancel a subscription?",
+      a6: "Kickoff Pro is a one-time purchase, not a subscription. There is nothing to cancel. If you purchased it by accident, please email us within 48 hours and we will help you get a refund through Apple.",
+      q7: "Is my data private?",
+      a7: "Yes. All room data is stored in your personal iCloud account via Apple CloudKit. We have no servers and we cannot read your data. There are no ads and no third-party tracking.",
+      legalH: "Legal",
+      privacyLink: "Privacy Policy",
+      termsLink: "Terms of Service",
+      legalFooter: "Prediction Plaza is for entertainment only. No real money. No prizes. No gambling."
+    },
+    "zh-Hans": {
+      title: "Kickoff 技术支持",
+      subtitle: "我们会在 48 小时内回复，通常更快。",
+      contactH: "联系我们",
+      contactDesc: "无论是疑问、Bug 反馈、退款申请，还是功能建议，请直接邮件联系我们：",
+      contactNote: "请附上您的 iOS 版本、App 版本及问题简述，方便我们快速处理。",
+      faqH: "常见问题",
+      q1: "为什么锁屏没有显示 Live Activity？",
+      a1: "打开 <strong>「设置 → 通知 → Kickoff」</strong>，开启 <strong>「实时活动」</strong>。需要 iOS 16.1 或更高版本。iPhone 14 Pro 及更新机型还可在灵动岛实时查看比分。",
+      q2: "朋友发来的房间邀请链接打不开",
+      a2: "请确保双方都已登录 iCloud（建议同一区域），且 iOS 16.0 及以上。如果仍然失败，请让朋友重新创建房间——邀请码 24 小时后过期。",
+      q3: "换了新设备，如何恢复 Pro 购买？",
+      a3: "打开 Kickoff → <strong>「设置 → 恢复购买」</strong>。请确认登录的 Apple ID 与原购买账号一致。",
+      q4: "Kickoff 涉及真实金钱博彩或赌博吗？",
+      a4: "<strong>不涉及。</strong>「预言广场」仅供娱乐使用，没有奖金、不涉及任何真实金钱、不构成任何形式的博彩，它只是一个社交排行榜。",
+      q5: "支持哪些联赛？",
+      a5: "全球 1,100+ 联赛——英超、西甲、德甲、意甲、法甲、欧冠、世界杯、中超、J 联赛、K 联赛、MLS 等。",
+      q6: "如何取消订阅？",
+      a6: "Kickoff Pro 是一次性买断制，不是订阅，无需取消。如果您不小心误购，请在 48 小时内邮件联系我们，我们会协助您通过 Apple 申请退款。",
+      q7: "我的数据是否私密？",
+      a7: "是的。所有房间数据通过 Apple CloudKit 储存于您个人的 iCloud 账户。我们没有服务器，也无法读取您的任何数据。无广告，无任何第三方追踪。",
+      legalH: "法律条款",
+      privacyLink: "隐私政策",
+      termsLink: "服务条款",
+      legalFooter: "「预言广场」仅供娱乐，不涉及真实金钱、无奖金、不构成任何博彩。"
+    },
+    "zh-Hant": {
+      title: "Kickoff 技術支援",
+      subtitle: "我們會在 48 小時內回覆，通常更快。",
+      contactH: "聯絡我們",
+      contactDesc: "無論是疑問、Bug 回報、退款申請，或功能建議，請直接寄信給我們：",
+      contactNote: "請附上您的 iOS 版本、App 版本與問題簡述，方便我們快速處理。",
+      faqH: "常見問題",
+      q1: "為什麼鎖定畫面沒有顯示 Live Activity？",
+      a1: "打開 <strong>「設定 → 通知 → Kickoff」</strong>，啟用 <strong>「即時動態」</strong>。需要 iOS 16.1 或更新版本。iPhone 14 Pro 及更新機型還可在動態島即時查看比分。",
+      q2: "朋友傳來的房間邀請連結無法開啟",
+      a2: "請確認雙方都已登入 iCloud（建議同一區域），且 iOS 16.0 以上。如果仍然失敗，請讓朋友重新建立房間——邀請碼 24 小時後過期。",
+      q3: "換了新裝置，如何還原 Pro 購買？",
+      a3: "打開 Kickoff → <strong>「設定 → 還原購買」</strong>。請確認登入的 Apple ID 與原購買帳號一致。",
+      q4: "Kickoff 涉及真實金錢博弈或賭博嗎？",
+      a4: "<strong>不涉及。</strong>「預言廣場」僅供娛樂用途，沒有獎金、不涉及任何真實金錢、不構成任何形式的博弈，它只是一個社交排行榜。",
+      q5: "支援哪些聯賽？",
+      a5: "全球 1,100+ 聯賽——英超、西甲、德甲、義甲、法甲、歐冠、世界盃、中超、J 聯盟、K 聯賽、MLS 等。",
+      q6: "如何取消訂閱？",
+      a6: "Kickoff Pro 是一次性買斷制，不是訂閱，無需取消。若您不小心誤購，請在 48 小時內寄信給我們，我們會協助您透過 Apple 申請退款。",
+      q7: "我的資料是否私密？",
+      a7: "是的。所有房間資料透過 Apple CloudKit 儲存於您個人的 iCloud 帳戶。我們沒有伺服器，也無法讀取您的任何資料。無廣告，無任何第三方追蹤。",
+      legalH: "法律條款",
+      privacyLink: "隱私權政策",
+      termsLink: "服務條款",
+      legalFooter: "「預言廣場」僅供娛樂，不涉及真實金錢、無獎金、不構成任何博弈。"
+    },
+    "ja": {
+      title: "Kickoff サポート",
+      subtitle: "48時間以内にご返信します（通常はもっと早く）。",
+      contactH: "お問い合わせ",
+      contactDesc: "ご質問、不具合報告、返金リクエスト、機能のご提案など、メールでお気軽にどうぞ：",
+      contactNote: "iOSバージョン、Appバージョン、問題の概要を添えていただけるとスムーズです。",
+      faqH: "よくある質問",
+      q1: "ロック画面にLive Activityが表示されません",
+      a1: "<strong>「設定 → 通知 → Kickoff」</strong>を開き、<strong>「ライブアクティビティ」</strong>をオンにしてください。iOS 16.1以降が必要です。iPhone 14 Pro以降ではDynamic Islandにもスコアが表示されます。",
+      q2: "友達から送られたルーム招待リンクが開けません",
+      a2: "双方がiCloudにサインイン済み（同じ地域推奨）で、iOS 16.0以上である必要があります。それでも開けない場合は、招待コードが24時間で期限切れになるため、友達にルームを再作成してもらってください。",
+      q3: "新しいデバイスでPro購入を復元するには？",
+      a3: "Kickoffを開き、<strong>「設定 → 購入の復元」</strong>を選んでください。元の購入時と同じApple IDでサインインしていることをご確認ください。",
+      q4: "Kickoffは実際のお金による賭博を含みますか？",
+      a4: "<strong>いいえ。</strong>「予言広場」はエンターテインメント目的のみで、賞金・実際のお金・賭博行為は一切ありません。純粋なソーシャルランキングです。",
+      q5: "どのリーグに対応していますか？",
+      a5: "世界1,100以上のリーグ——プレミアリーグ、ラ・リーガ、ブンデスリーガ、セリエA、リーグ・アン、UEFAチャンピオンズリーグ、FIFAワールドカップ、Jリーグ、Kリーグ、MLSなど。",
+      q6: "サブスクリプションの解約方法は？",
+      a6: "Kickoff Proは買い切り制で、サブスクリプションではありません。解約は不要です。誤って購入された場合は、48時間以内にメールでご連絡ください。Appleを通じた返金手続きをサポートします。",
+      q7: "私のデータはプライベートですか？",
+      a7: "はい。すべてのルームデータはApple CloudKit経由でお客様個人のiCloudアカウントに保存されます。当方にサーバーはなく、お客様のデータを読むことはできません。広告も第三者トラッキングもありません。",
+      legalH: "法的事項",
+      privacyLink: "プライバシーポリシー",
+      termsLink: "利用規約",
+      legalFooter: "「予言広場」はエンターテインメント目的のみ。実際のお金・賞金・賭博は一切ありません。"
+    },
+    "es": {
+      title: "Soporte de Kickoff",
+      subtitle: "Respondemos en menos de 48 horas. Normalmente mucho antes.",
+      contactH: "Contáctanos",
+      contactDesc: "Para cualquier duda, reporte de error, solicitud de reembolso o sugerencia, escríbenos por correo:",
+      contactNote: "Por favor incluye tu versión de iOS, versión de la app y una breve descripción.",
+      faqH: "Preguntas frecuentes",
+      q1: "¿Por qué no aparece la Live Activity en mi pantalla de bloqueo?",
+      a1: "Abre <strong>«Ajustes → Notificaciones → Kickoff»</strong> y activa <strong>«Actividades en vivo»</strong>. Requiere iOS 16.1 o posterior. En iPhone 14 Pro o más reciente, el marcador también aparecerá en la Isla Dinámica.",
+      q2: "El enlace de invitación de mi amigo no abre",
+      a2: "Ambos deben tener sesión iniciada en iCloud (idealmente en la misma región) y iOS 16.0 o superior. Si aún falla, pídele a tu amigo que recree la sala — los códigos de invitación caducan en 24 horas.",
+      q3: "¿Cómo restauro mi compra Pro en un dispositivo nuevo?",
+      a3: "Abre Kickoff → <strong>«Ajustes → Restaurar compras»</strong>. Asegúrate de iniciar sesión con el mismo ID de Apple usado en la compra original.",
+      q4: "¿Kickoff implica apuestas con dinero real?",
+      a4: "<strong>No.</strong> La Plaza de Predicciones es solo entretenimiento. No hay premios, ni dinero real, ni apuestas de ningún tipo. Es puramente una clasificación social.",
+      q5: "¿Qué ligas son compatibles?",
+      a5: "Más de 1.100 ligas en todo el mundo — Premier League, LaLiga, Bundesliga, Serie A, Ligue 1, UEFA Champions League, FIFA World Cup, Liga MX, MLS, y muchas más.",
+      q6: "¿Cómo cancelo una suscripción?",
+      a6: "Kickoff Pro es una compra única, no una suscripción. No hay nada que cancelar. Si compraste por error, escríbenos en 48 horas y te ayudaremos a obtener un reembolso a través de Apple.",
+      q7: "¿Mis datos son privados?",
+      a7: "Sí. Todos los datos de las salas se almacenan en tu cuenta personal de iCloud mediante Apple CloudKit. No tenemos servidores y no podemos leer tus datos. No hay anuncios ni rastreo de terceros.",
+      legalH: "Legal",
+      privacyLink: "Política de Privacidad",
+      termsLink: "Términos del Servicio",
+      legalFooter: "La Plaza de Predicciones es solo para entretenimiento. Sin dinero real. Sin premios. Sin apuestas."
+    }
+  };
+
+  const SUPPORTED = ["en", "zh-Hans", "zh-Hant", "ja", "es"];
+  const DEFAULT_LANG = "en";
+
+  function detectLang() {
+    // 1. URL ?lang= 优先
+    const url = new URLSearchParams(location.search).get("lang");
+    if (url && SUPPORTED.includes(url)) return url;
+    // 2. localStorage 记忆
+    const saved = localStorage.getItem("kickoff_lang");
+    if (saved && SUPPORTED.includes(saved)) return saved;
+    // 3. 浏览器语言
+    const nav = (navigator.language || "en").toLowerCase();
+    if (nav.startsWith("zh")) {
+      if (nav.includes("hant") || nav.includes("tw") || nav.includes("hk") || nav.includes("mo")) return "zh-Hant";
+      return "zh-Hans";
+    }
+    if (nav.startsWith("ja")) return "ja";
+    if (nav.startsWith("es")) return "es";
+    // 4. 默认英语
+    return DEFAULT_LANG;
+  }
+
+  function applyLang(lang) {
+    if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.title = dict.title + " — Kickoff";
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll("nav .lang button").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    localStorage.setItem("kickoff_lang", lang);
+  }
+
+  document.querySelectorAll("nav .lang button").forEach(btn => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(detectLang());
+</script>
+
+</body>
+</html>

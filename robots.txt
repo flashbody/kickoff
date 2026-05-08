@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flashbody.github.io/kickoff/sitemap.xml

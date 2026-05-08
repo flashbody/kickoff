@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kickoff — The only World Cup app you need.</title>
+  <meta name="description" content="Kickoff: 48 teams, 104 matches, one screen, with friends. iOS / iPadOS / Apple Watch. Launching June 11, 2026.">
+  <meta property="og:title" content="Kickoff — The only World Cup app you need.">
+  <meta property="og:description" content="48 teams · 104 matches · one screen · with friends.">
+  <meta property="og:url" content="https://flashbody.github.io/kickoff/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+  <style>
+    :root {
+      --primary: #0EA85B;
+      --accent: #FF6B35;
+      --premium: #D4A853;
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #0A0E0F;
+      --text-secondary: #6B7280;
+      --divider: #E5E7EB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #10B968;
+        --accent: #FF8557;
+        --premium: #E8C176;
+        --bg: #0A0E0F;
+        --surface: #1A1E1F;
+        --text: #FAFAF7;
+        --text-secondary: #9CA3AF;
+        --divider: #2D3236;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      background: rgba(250, 250, 247, 0.7);
+      border-bottom: 1px solid var(--divider);
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      nav { background: rgba(10, 14, 15, 0.7); }
+    }
+    nav .logo { font-weight: 800; font-size: 20px; color: var(--primary); }
+    nav .lang { display: flex; gap: 12px; font-size: 14px; }
+    nav .lang a { color: var(--text-secondary); text-decoration: none; }
+    nav .lang a:hover { color: var(--primary); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .hero { text-align: center; padding: 120px 24px 80px; }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .hero h1 .accent { color: var(--primary); }
+    .hero p.tagline { font-size: clamp(18px, 2vw, 22px); color: var(--text-secondary); max-width: 640px; margin: 0 auto 16px; }
+    .hero p.date { font-size: 14px; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 40px; }
+    .cta { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--primary); color: #fff; text-decoration: none; border-radius: 14px; font-weight: 700; transition: transform 0.2s; }
+    .cta:hover { transform: translateY(-2px); }
+    .features { padding: 80px 0; background: var(--surface); }
+    .features h2 { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 56px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--bg); border: 1px solid var(--divider); border-radius: 16px; padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .card .emoji { font-size: 32px; margin-bottom: 12px; }
+    .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .card p { color: var(--text-secondary); font-size: 15px; }
+    .pricing { padding: 80px 0; }
+    .pricing h2 { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 56px; }
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 720px; margin: 0 auto; }
+    .price-card { background: var(--surface); border: 2px solid var(--divider); border-radius: 20px; padding: 32px; text-align: center; }
+    .price-card.featured { border-color: var(--premium); position: relative; }
+    .price-card.featured::before { content: "EARLY BIRD"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--premium); color: #fff; padding: 4px 16px; border-radius: 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; }
+    .price-card .name { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .price-card .price { font-size: 48px; font-weight: 900; color: var(--primary); margin-bottom: 4px; }
+    .price-card .note { font-size: 13px; color: var(--text-secondary); margin-bottom: 24px; }
+    .price-card ul { list-style: none; text-align: left; }
+    .price-card li { padding: 8px 0; font-size: 14px; }
+    .price-card li::before { content: "✓ "; color: var(--primary); font-weight: 700; }
+    footer { padding: 48px 24px; text-align: center; color: var(--text-secondary); font-size: 13px; border-top: 1px solid var(--divider); }
+    footer a { color: var(--text-secondary); margin: 0 8px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">⚽ Kickoff</a>
+    <div class="lang">
+      <a href="#" data-lang="en">EN</a>
+      <a href="#" data-lang="zh">中文</a>
+      <a href="#" data-lang="ja">日本語</a>
+      <a href="#" data-lang="es">ES</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>The only <span class="accent">World Cup</span> app you need.</h1>
+    <p class="tagline" id="tagline">48 teams · 104 matches · one screen · with friends.</p>
+    <p class="date">Launching June 11, 2026 · iOS · iPadOS · Apple Watch</p>
+    <a href="#" class="cta">Notify me on launch</a>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 id="features-title">Built for fans, not advertisers</h2>
+      <div class="grid">
+        <div class="card"><div class="emoji">🎯</div><h3>MyCup</h3><p>Pick your team. Get your timeline. Stop juggling 4 apps.</p></div>
+        <div class="card"><div class="emoji">⚡</div><h3>0.5s Live Scores</h3><p>WebSocket-powered. Faster than the official app. Zero ads.</p></div>
+        <div class="card"><div class="emoji">📺</div><h3>Where to Watch</h3><p>Your country, your broadcaster, one tap.</p></div>
+        <div class="card"><div class="emoji">👥</div><h3>World Cup Room</h3><p>100 friends. Emoji rain. Live betting. Highlight cards.</p></div>
+        <div class="card"><div class="emoji">🤖</div><h3>AI Predictor</h3><p>On-device MLX. Or bring your own OpenAI/Claude key.</p></div>
+        <div class="card"><div class="emoji">⌚</div><h3>Apple Watch</h3><p>Live Activity + Dynamic Island + complications.</p></div>
+        <div class="card"><div class="emoji">📰</div><h3>Pulse News</h3><p>Curated from BBC, ESPN, NHK. Translated. Deduplicated.</p></div>
+        <div class="card"><div class="emoji">⭐</div><h3>Player Score</h3><p>Transparent formula. Open weights. Trust-first.</p></div>
+        <div class="card"><div class="emoji">🌍</div><h3>4 languages</h3><p>English, 中文, 日本語, Español.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="container">
+      <h2>Simple, fair pricing</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="name">Free</div>
+          <div class="price">$0</div>
+          <div class="note">Always</div>
+          <ul>
+            <li>All scores & schedule</li>
+            <li>1 favorite team</li>
+            <li>Basic Room (≤ 3)</li>
+            <li>Where to Watch</li>
+            <li>Basic news</li>
+            <li>0 ads. Forever.</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <div class="name">Pro Pass</div>
+          <div class="price">$2.99</div>
+          <div class="note">Early bird · then $4.99 · One-time</div>
+          <ul>
+            <li>Unlimited Rooms (≤ 100)</li>
+            <li>3 favorite teams</li>
+            <li>AI Predictor (MLX/Cloud/BYOK)</li>
+            <li>Apple Watch advanced</li>
+            <li>Highlight card export</li>
+            <li>Full Player Score</li>
+            <li>0 ads. Forever.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Kickoff Studio · Made with ❤️ by an indie team</p>
+    <p style="margin-top: 8px;">
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="support.html">Support</a> ·
+      <a href="mailto:flashbody@foxmail.com">Contact</a>
+    </p>
+    <p style="margin-top: 16px; font-size: 11px;">
+      Kickoff is not affiliated with FIFA. "FIFA" and "FIFA World Cup" are trademarks of FIFA.
+    </p>
+  </footer>
+
+  <script>
+    const i18n = {
+      en: { tagline: "48 teams · 104 matches · one screen · with friends.", title: "Built for fans, not advertisers" },
+      zh: { tagline: "48 支球队 · 104 场比赛 · 一屏搞定 · 和朋友一起看", title: "为球迷而生，不为广告主" },
+      ja: { tagline: "48チーム · 104試合 · 一つの画面 · 友達と一緒に。", title: "ファンのために、広告主のためではなく" },
+      es: { tagline: "48 selecciones · 104 partidos · una pantalla · con amigos.", title: "Hecho para fans, no para anunciantes" }
+    };
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const lang = el.dataset.lang;
+        document.getElementById('tagline').textContent = i18n[lang].tagline;
+        document.getElementById('features-title').textContent = i18n[lang].title;
+      });
+    });
+  </script>
+</body>
+</html>
