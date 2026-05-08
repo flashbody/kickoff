@@ -1,0 +1,36 @@
+# 此仓库仅托管 web/ + LICENSE + README，禁止任何源码提交
+# 以下规则用于强力拦截误推源码
+
+# Xcode / Swift 全部拒绝
+*.swift
+*.xcodeproj/
+*.xcworkspace/
+*.entitlements
+*.mobileprovision
+*.p12
+*.cer
+project.yml
+Package.swift
+Package.resolved
+
+# 项目源码目录拒绝
+Kickoff/
+KickoffTests/
+KickoffWidget/
+KickoffWatch/
+KickoffUITests/
+Shared/
+
+# 文档/决策/脚本拒绝（这些应该在 Gitee 主仓）
+docs/
+adr/
+scripts/
+
+# 通用
+.DS_Store
+build/
+DerivedData/
+*.ipa
+*.dSYM
+.build/
+.swiftpm/

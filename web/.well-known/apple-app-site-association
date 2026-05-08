@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.kickoffstudio.kickoff",
+        "paths": [
+          "/Football/r",
+          "/Football/r/*",
+          "NOT /Football/privacy",
+          "NOT /Football/terms"
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [ "TEAMID.com.kickoffstudio.kickoff" ]
+  }
+}
